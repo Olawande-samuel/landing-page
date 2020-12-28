@@ -5,8 +5,16 @@ $textClr: hsl(227, 12%, 61%);
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-family: "Be Vietnam", sans-serif;
+}
+
+body {
+	background-image: url(./images/bg-tablet-pattern.svg),
+		url(./images/bg-tablet-pattern.svg);
+	background-repeat: no-repeat;
+	background-size: 25.407em, 20em;
+	background-position-y: -5em, 55.7em;
+	background-position-x: 100%, -30%;
 }
 @mixin flex {
 	display: flex;
@@ -17,6 +25,7 @@ $textClr: hsl(227, 12%, 61%);
 	border: 1px solid #ff6347;
 }
 // default styles
+
 .btn {
 	border: none;
 	outline: none;
@@ -113,7 +122,7 @@ ul {
 
 // second section styles
 .second-section {
-	margin-top: 50px;
+	margin-top: 10em;
 }
 .second-section-wrapper {
 	@include flex;
@@ -200,20 +209,11 @@ ul {
 		text-align: center;
 		font-size: 18px;
 		background: #fff;
-		width: 300px;
+		width: 400px;
 
 		/* Center slide text vertically */
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: -webkit-flex;
 		display: flex;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
-		-webkit-justify-content: center;
 		justify-content: center;
-		-webkit-box-align: center;
-		-ms-flex-align: center;
-		-webkit-align-items: center;
 		align-items: center;
 	}
 
@@ -249,7 +249,12 @@ ul {
 .featured-container {
 	width: 100%;
 	margin-top: 100px;
-	background: $primaryColorRed;
+	background-color: $primaryColorRed;
+	background-image: url(./images/bg-tablet-pattern.svg);
+	background-repeat: no-repeat;
+	background-size: 20em;
+	background-blend-mode: color-burn;
+	background-position-x: 20%;
 
 	.featured-content-wrapper {
 		width: 80%;
@@ -298,7 +303,6 @@ footer {
 			cursor: pointer;
 
 			svg:hover path {
-				color: #ff6347;
 				fill: #ff6347;
 			}
 		}
@@ -324,6 +328,7 @@ footer {
 				a {
 					text-decoration: none;
 					color: hsl(0, 0%, 98%);
+
 					&:hover {
 						color: $primaryColorRed;
 					}
@@ -343,7 +348,9 @@ footer {
 				padding: 4px 20px;
 			}
 		}
-
+		#form-validation {
+			color: $primaryColorRed;
+		}
 		p {
 			color: hsl(0, 0%, 98%);
 
@@ -375,19 +382,23 @@ footer {
 		width: 100%;
 		height: 100vh;
 		line-height: 3;
-		background: hsl(227, 12%, 61%);
+		backdrop-filter: contrast(0.5);
 		transform: translateY(-100vh);
 		transition: transform 0.5s ease-in-out;
 
 		ul {
 			display: block;
 			width: 80%;
+			min-height: 300px;
 			margin: auto;
 			margin-top: 2em;
 			text-align: center;
 			background: hsl(0, 0%, 98%);
 			color: $textClr;
-			
+
+			li a {
+				font-weight: 500;
+			}
 		}
 	}
 	.show-nav {
@@ -424,6 +435,9 @@ footer {
 			margin-top: 20px;
 		}
 	}
+	.first-section-wrapper {
+		flex-wrap: wrap-reverse;
+	}
 	.first-section-wrapper .btn {
 		margin: auto;
 	}
@@ -448,14 +462,13 @@ footer {
 	}
 
 	.footer-wrapper {
-		line-height: 2;
-		flex-direction: column-reverse;
+		flex-wrap: wrap;
 		position: relative;
 		padding: 0;
 
 		.logo-icons {
 			flex: 100%;
-			flex-direction: column-reverse;
+			flex-direction: column;
 			gap: 20px;
 			width: 100%;
 			margin-bottom: 50px;
@@ -467,8 +480,6 @@ footer {
 			}
 		}
 		.link-container {
-			flex: 1 0 100%;
-			width: 100%;
 			margin-top: 5px 0;
 
 			li a {
@@ -477,16 +488,10 @@ footer {
 		}
 
 		.subs-container {
-			flex: 1 0 100%;
-			
-
 			form,
 			p {
 				max-width: 100%;
 				margin: auto;
-			}
-			form {
-				width: 60%;
 			}
 
 			form input {
@@ -505,6 +510,58 @@ footer {
 				width: 100%;
 				transform: translateX(-50%);
 				text-align: center;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 465px) {
+	body {
+		background-image: url(./images/bg-tablet-pattern.svg),
+			url(./images/bg-tablet-pattern.svg);
+		background-repeat: no-repeat;
+		background-size: 25.407em, 20em;
+		background-position-y: -10em, 41.7em;
+		background-position-x: 6em, 15em;
+	}
+	.footer-wrapper {
+		flex-direction: column-reverse;
+
+		.logo-icons {
+			flex: 100%;
+			flex-direction: column-reverse;
+
+			.contact,
+			.logo {
+				max-width: 80%;
+				margin: auto;
+			}
+		}
+		.link-container {
+			width: 100%;
+			font-size: 14px;
+		}
+
+		.subs-container {
+			flex: 1 0 100%;
+
+			form input {
+				width: 75%;
+			}
+
+			form .btn {
+				padding: 0;
+				width: 25%;
+			}
+
+			.copyright {
+				position: absolute;
+				bottom: 0px;
+				left: 50%;
+				width: 100%;
+				transform: translateX(-50%);
+				text-align: center;
+				font-size: 14px;
 			}
 		}
 	}

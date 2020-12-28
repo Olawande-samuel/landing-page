@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="./style.css">   
   <!-- <link rel="stylesheet" href="./Splide/splide-core.min.css"> -->
@@ -28,7 +30,6 @@
         </nav>
         <button class="btn">Get Started</button>
         <i class="open-menu"><img src="https://raw.githubusercontent.com/Olawande-samuel/landing-page/f5d82acd47bf930411d5ddf2c41c93418e496916/images/icon-hamburger.svg" alt="menu" class="btn-image"></i>
-        <!-- <i class="close-menu"><img src="./images/icon-close.svg" alt="menu"></i> -->
       </div>
       <main>
         <section class="first-section">
@@ -228,7 +229,7 @@
                 </div>
             
               </div>
-              <!-- Add Pagination -->
+              <!-- Adds Pagination -->
               <div class="swiper-pagination"></div>
             </div>
            
@@ -307,9 +308,9 @@
             </ul>
           </div>
           <div class="subs-container">
-            <form action="#" class="form">
-              <input type="email" name="subscribe" id="sunscribe" placeholder="Updates in your inbox...">
-              <button class="btn">Go</button>
+            <form action="#" name="subform" class="form">
+              <input type="email" name="subscribe" id="subscribe"  placeholder="Updates in your inbox...">
+              <button id="submitEmail" class="btn">Go</button>
             </form>
             <p id="form-validation"></p>
             <p class="copyright">Copyright 2020. All Rights Reserved</p>
@@ -318,28 +319,11 @@
       </footer>
 
   </div>
-  <!-- <img src="./images/bg-tablet-pattern.svg" alt="" style="width: 200px;">
-  <img src="./images/bg-tablet-pattern.svg" alt="" style="width: 200px;"> -->
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Olawande Akinmosin</a>.
+    Coded by <a href="https://github.com/Olawande-samuel">Olawande Akinmosin</a>.
   </div>
  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  });
-</script>
   <script src="./app.js"></script>
  
 </body>
